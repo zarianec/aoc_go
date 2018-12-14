@@ -51,8 +51,8 @@ func main() {
 		pixels[curX][curY] = true
 	}
 
-	for i := minY - 5; i < maxY+6; i++ {
-		for k := minX - 5; k < maxX+6; k++ {
+	for i := minY - 1; i < maxY+2; i++ {
+		for k := minX - 1; k < maxX+2; k++ {
 			if _, ok := pixels[int(k)][int(i)]; ok {
 				fmt.Print("#")
 			} else {
@@ -61,6 +61,8 @@ func main() {
 		}
 		fmt.Println()
 	}
+
+	fmt.Printf("Seconds needed: %d\n", second)
 
 	elapsed := time.Since(start)
 	log.Printf("Execution time %s", elapsed)
